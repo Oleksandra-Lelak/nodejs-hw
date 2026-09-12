@@ -1,5 +1,9 @@
+import { HttpError } from 'http-errors';
+
 export const errorHandler = (err, req, res, next) => {
-  res.status(err.status ?? 500).json({
+  const status = err instanceof HttpError ? err.status : 500;
+
+  res.status(status).json({
     message: err.message,
   });
 };
