@@ -4,7 +4,7 @@ import express from 'express';
 
 import { connectMongoDB } from './db/connectMongoDB.js';
 import { errorHandler } from './middleware/errorHandler.js';
-import logger from './middleware/logger.js';
+import { logger } from './middleware/logger.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
 import notesRoutes from './routes/notesRoutes.js';
 
